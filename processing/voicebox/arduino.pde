@@ -51,9 +51,7 @@ if (inputReceived == true && millis() - starttime >= delaytime ) {
           
           inputReceived = false;
           timer = false;
-          //text("Not recording.", 5, 15);
           
-          name++;
           
  }  
  else { 

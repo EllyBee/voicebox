@@ -20,7 +20,7 @@ void executeCmd() {
     println("changed directory to");
     out.println("pwd");
     //println("now recording");
-    out.println("sox/rec Rec/" +countname+".ogg trim 0 5");
+    out.println("sox/rec Rec/" + boxName + currentDate +".ogg trim 0 5");
     
     out.println("exit");
     try {

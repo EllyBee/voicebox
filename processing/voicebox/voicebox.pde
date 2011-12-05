@@ -14,6 +14,12 @@ int starttime;
 int delaytime = 5000; // delay in milliseconds 
 //--
 
+
+//variables unique to each box
+String boxName = "sdldn_";
+String currentDate;
+//-
+
 boolean recording = false;
 
 void setup() {
@@ -24,20 +30,27 @@ void setup() {
   String portName = Serial.list()[0];
   myPort = new Serial(this, portName, 9600);
   
-  
+    
 }
 
 
 ////// CREATE NEW FILE ////////
 
-int countname; 
-int name = 0;
-
 void newFile() {
+  
+  String y = String.valueOf(year());
+  String m = String.valueOf(month());
+  String d = String.valueOf(day());
+  String h = String.valueOf(hour());
+  String mi = String.valueOf(minute());
+  String s = String.valueOf(second());
+  String mil = String.valueOf(millis());
+ 
+ currentDate = y + m + d + h + mi + s + mil; 
+ print(currentDate);
 
-  //increament the naming of the sound file.
-  countname = (name + 1); 
-  println("just created new file " + countname + ".ogg");
+//filename made up of current date and time and box location. - This means filename is always unique.
+  println("just created new file "+ boxName + currentDate +".ogg");
 }
 
 
